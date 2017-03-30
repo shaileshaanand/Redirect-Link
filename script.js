@@ -1,5 +1,17 @@
 var purl=window.location.href;
-if(purl.substr(0,22)=="https://userscloud.com")
+var hosta=window.location.hostname;
+var hostArray=["userscloud.com","openload.com","4shared.com","mega.nz","adf.ly","sh.st","zippyshare.com","mi.cr"/*"","","","","","","","",""*/];
+var i,flag=false;
+for(i=0;i<hostArray.length;i++)
 {
-	window.location="http://www.autogeneratelink.com/?link="+purl;
+	if(hostArray[i]==hosta)
+	{
+		flag=true;
+		break;
+	}
+}
+
+if(flag)
+{
+	document.body.innerHTML+="<a href=\"http://www.autogeneratelink.com/?link="+purl+"\">goto autogeneratelink.com</a>";
 }
